@@ -36,9 +36,9 @@ The first two are fairly straight forward, but the third deserves some comment. 
 
 So how well does the model perform? There's a few different ways to evaluate the model. The first test is understanding if the model is accurately describing the past, using observations that were held out and the model never directly saw. We always keep a 10-20% holdout sample to both understand when the model begins to get too complex (hyperlink: https://en.wikipedia.org/wiki/Overfitting) and more trees are no longer helping predictions, and also to see how well the model fits on these held out observations. The model fits extremely well on this hold out dataset. It's able to predict well across all the important dimensions, for example serial and low ask.
 
-![image](https://user-images.githubusercontent.com/10187424/159057829-b7a65615-3dfd-400e-a231-6473d44cc70d.png)
+![image](https://user-images.githubusercontent.com/10187424/163114750-6f8bb9f5-e992-479d-9007-c396e3c6f625.png)
 
-![image](https://user-images.githubusercontent.com/10187424/159057877-827f3945-d755-4ff9-9614-a3d1f5e0f13d.png)
+![image](https://user-images.githubusercontent.com/10187424/163115681-a5ec3424-c930-4290-af1c-1644aefac0d2.png)
 
 The second test is to see how well the model predicts future observations. For any well constructed social science machine learning model, the performance on future, unseen observations is always going to be worse than held out observations that occurred in the time period you built the model on. The reason for this is simple, in a market driven by consumer sentiments driving outcomes, consumer sentiments are liable to shift over time. We see the same thing occuring in the NBA Top Shot markets. Over time, price curves are flattening. Everything else equal, the most valuable serials are selling for lower multiples of low ask. This leads to a bit of overprediction as the model adjusts. 
 
@@ -46,9 +46,9 @@ Models are not magic, in the end they are essentially mathematical averages of w
 
 With all that in mind, we are very pleased with the performance of the model on future observations, as it slopes over the most important variables well, despite some overprediction in the most valuable serials. These are taken on a sample of transactions that occurred in the 2 weeks after a recent model fit. Due to the low sample sizes of sales of a specific serial number in any two week periods, these <=10 serials are liable to be a bit volatile from sample to sample.
 
-![image](https://user-images.githubusercontent.com/10187424/159057982-1ce4a697-4afa-43ec-8655-741d64ee2d7c.png)
+![image](https://user-images.githubusercontent.com/10187424/163114455-9e4a7ad7-4601-4add-82ad-744644495543.png)
 
-![image](https://user-images.githubusercontent.com/10187424/159058056-51fc2ce2-5d57-4838-b417-70e71b1a71dc.png)
+![image](https://user-images.githubusercontent.com/10187424/163115217-20837d23-dfe0-4f16-82b7-15570c87431f.png)
 
 To keep prediction error as small as possible, we refit the model on a weekly basis to make sure the model is up to date and accounting for current trends. The OTM team has worked through many spot checks of the model's outputs, and we're happy with how the model performs both in aggregate, and with what individual moments the model differentiates from the crowd.
 
@@ -77,3 +77,5 @@ All models are weak for [extrapolation](https://en.wikipedia.org/wiki/Extrapolat
 ## Conclusion
 
 I hope you find the above information useful. At OTM we decided instead of releasing a valuation tool as a pure black box, we wanted to tell you a bit more about the process and make the tool a bit more interesting with some transparency, and make you, the end user, more informed about how to use its outputs. Hopefully you have as much fun using it as I did building it. We're really happy with the end result, and look forward to hearing your feedback with an eye on making continued improvements so that we can deliver you the best analytics toolkit possible. 
+
+
